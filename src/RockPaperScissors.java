@@ -1,9 +1,11 @@
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class RockPaperScissors {
     public static void main(String[] args) {
         System.out.println(rockPaperScissors("rock", "paper"));
         System.out.println(rockPaperScissors_V2("rock", "paper"));
+        System.out.println(digitize(58625));
     }
 
     /*
@@ -42,5 +44,25 @@ public class RockPaperScissors {
             if (temp.equals(game.get(p1))) return "Player 1 won!";
             else return "Player 2 won!";
         }
+    }
+
+    /*
+    Convert number to reversed array of digits
+    Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+
+    Example(Input => Output):
+    348597 => [7,9,5,8,4,3]
+    0 => [0]
+
+     */
+    public static int[] digitize(long num) {
+        String str = "";
+        str += num;
+        int [] rts = new int[str.length() - 1];
+        for (int i = 0; i < str.length(); i++) {
+            rts[i] = str.charAt(i);
+        }
+         return Arrays.toString(rts);
+
     }
 }
